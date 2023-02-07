@@ -17,3 +17,20 @@ int main(){
 	
 	return 0;
 }
+void shuffle(int &w,int &x,int &y,int &z){
+	int katujik[4]={w,x,y,z};
+	int kasakjai[4] = {0,0,0,0};
+	for(int i=0;i<4;i++){
+		kasakjai[i] = rand()%4;
+		for(int j = 0;j<i;j++){
+			if(kasakjai[i] == kasakjai[j]){
+				i--;
+				break;
+			}
+		}
+	}
+	w = katujik[kasakjai[0]];
+	x = katujik[kasakjai[1]];
+	y = katujik[kasakjai[2]];
+	z = katujik[kasakjai[3]];
+}
